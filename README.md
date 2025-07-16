@@ -1,123 +1,61 @@
-# AAI 501 - Final Team Project
+# Strategic Planning of Cycling Infrastructure Through Built Environment Analysis and Network Optimization
 
-This repository contains the work for the final team project for the AAI 501 course. The project involves identifying an AI-driven problem, performing a hands-on analysis using machine learning techniques, and delivering a comprehensive report and presentation.
+**Course:** AAI 501 Final Project  
+**Team:** Group 7 (Marston Ward, Nelson Arellano)
 
-## Project Description
+## 1. Project Overview
 
-**(Team to complete this section)**
+This project develops a data-driven system to aid city planners in the strategic development of bike paths. Our approach focuses on identifying and addressing "bike lane deserts"—urban areas with high potential for bicycle use but lacking safe, connected cycling routes. By analyzing the built environment and applying network optimization algorithms, the system proposes high-impact infrastructure additions to enhance urban micro-mobility.
 
-A brief, one-paragraph summary of the project. This should include:
+## 2. Problem Statement
 
-  * **Problem Statement:** A clear and unambiguous statement of the problem you are solving.
-  * **Business Application:** The real-world organizational or business application of your project.
-  * **Goals:** What you aim to achieve (e.g., predict loan defaults with \>90% accuracy, classify human activities, identify key features for predicting malignancy).
-  * **Course Topics:** Identification of specific course topics applied (e.g., Classification, Clustering, Deep Learning, NLP, etc.).
+Cycling adoption varies dramatically across cities and is heavily influenced by the quality of infrastructure. While cities like Copenhagen have achieved over 50% bicycle commuting, adoption in the United States remains in the low single digits. This project addresses the challenge of intelligently expanding cycling networks to make biking a safer and more viable transportation option.
 
-## Team Members 👥
+## 3. Project Objectives
 
-  * [Marston Ward 1]
-  * [Nelson Arellano Parra 2]
+The system is designed to function as an "infrastructure planner" that will:
 
------
+1. **Diagnose** current cycling infrastructure to identify underserved areas.
+2. **Analyze** the urban environment using objective, data-driven clustering methods.
+3. **Propose** strategic new bike lanes that maximize connectivity and impact.
+4. **Optimize** connections between isolated residential zones and the existing bike network.
 
-## Dataset 📊
+## 4. Technical Approach
 
-**(Team to complete this section)**
+Our solution is built on three core modules that process geospatial data, identify target areas, and propose optimized routes.
 
-  * **Dataset Name:** [e.g., UCI Human Activity Recognition Using Smartphones]
-  * **Source:** [Provide a link to the dataset source, e.g., Kaggle, UCI Machine Learning Repository]
-  * **Description:** A brief overview of the dataset, including its size (instances and features), and what the data represents.
+### Module 1: Urban Feature Extraction
 
-**Note:** Per project requirements, the selected dataset must contain **more than 1000 examples** and should not require excessive data preprocessing.
+- **Technology:** `OSMnx`
+- **Purpose:** Collects and processes neighborhood-level data to quantify existing infrastructure density, extract relevant urban characteristics (e.g., points of interest, street types), and build detailed profiles of the urban area.
 
------
+### Module 2: Underdeveloped Area Identification
 
-## Methodology ⚙️
+- **Algorithms:** K-Means Clustering, DBSCAN
+- **Purpose:** Applies unsupervised machine learning to the urban profiles to identify "bike lane deserts" by detecting mismatches between cycling potential and infrastructure availability.
 
-**(Team to complete this section)**
+### Module 3: Infrastructure Proposal
 
-This project will investigate a solution by applying and comparing **at least two different types of machine learning algorithms** (e.g., Classification, Clustering, Regression).
+- **Algorithms:** Dijkstra's Shortest Path, Betweenness Centrality Analysis
+- **Purpose:** Designs strategic solutions by finding the most efficient routes to connect underserved zones to the existing bike network. Proposals are ranked using a custom impact score based on population served, new POIs connected, and construction feasibility.
 
-Our experimental design includes:
+## 5. How to Run
 
-1.  **Data Preprocessing:** [Briefly describe steps, e.g., handling missing values, scaling features].
-2.  **Feature Engineering/Selection:** [Briefly describe steps, e.g., creating new features, using PCA or feature importance].
-3.  **Model Training:** We will train the following models:
-      * **Model 1:** [e.g., Logistic Regression]
-      * **Model 2:** [e.g., Random Forest Classifier]
-      * *(Add more if applicable)*
-4.  **Model Evaluation & Comparison:** We will compare the models based on metrics such as [e.g., Accuracy, Precision, Recall, F1-score, ROC-AUC]. Results will be presented graphically to showcase performance differences.
-
------
-
-## Repository Structure
-
-```
-.
-├── data/              # Raw and processed data
-├── notebooks/         # Jupyter notebooks for exploration and analysis
-├── src/               # Source code for data processing, modeling, etc.
-├── reports/           # Final report and presentation slides
-├── README.md          # This file
-└── requirements.txt   # Project dependencies
-```
-
------
-
-## Setup and Installation
-
-1.  Clone the repository:
+1. **Clone the repository:**
 
     ```bash
-    git clone [URL_to_this_repository]
-    cd [repository_name]
+        git clone [URL_to_your_repo]
+        cd [repository_folder]
     ```
 
-2.  Create a virtual environment (recommended):
+2. **Install dependencies:**
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+        pip install -r requirements.txt
     ```
 
-3.  Install the required dependencies:
+3. **Run the main analysis script:**
 
     ```bash
-    pip install -r requirements.txt
+        python main.py
     ```
-
------
-
-## Usage
-
-**(Team to complete this section)**
-
-To replicate the analysis, run the main Jupyter Notebook:
-
-```bash
-jupyter notebook notebooks/final_analysis.ipynb
-```
-
-Or execute the main script:
-
-```bash
-python src/main.py
-```
-
------
-
-## Results and Findings
-
-**(Team to complete this section after analysis)**
-
-This section will be updated with a summary of our findings, key visualizations, and a discussion of the final model performance and interpretation.
-
------
-
-## Contributing
-
-This is a team project for AAI 501. All team members are expected to contribute equally to the project deliverables.
-
-  * **Version Control:** This project uses **GitHub** for version control. Please create branches for new features and use pull requests for merging.
-  * **Coding Standards:** All Python code should adhere to the **PEP 8 style guide**.
-  * **Communication:** Team members will communicate regularly to ensure project alignment and progress.
